@@ -1,0 +1,18 @@
+{
+    "name": "blog-graphql-server",
+    "author": {
+        "name": "kingrayhan",
+        "email": "rayhan095@gmail.com",
+        "url": "https://rayhan.info"
+    },
+    "scripts": {
+        "start": "node index",
+        "dev": "nodemon"
+    },
+    "dependencies": {
+        "graphql-yoga": "^1.17.4"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.0"
+    }
+}
