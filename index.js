@@ -1,20 +1,9 @@
-const { GraphQLServer } = require('graphql-yoga')
+import { GraphQLServer } from 'graphql-yoga'
+import fs from 'fs'
 
-const users = JSON.parse(
-    require('fs')
-        .readFileSync('./datas/users.json')
-        .toString()
-)
-const posts = JSON.parse(
-    require('fs')
-        .readFileSync('./datas/posts.json')
-        .toString()
-)
-const comments = JSON.parse(
-    require('fs')
-        .readFileSync('./datas/comments.json')
-        .toString()
-)
+const users = JSON.parse(fs.readFileSync('./datas/users.json').toString())
+const posts = JSON.parse(fs.readFileSync('./datas/posts.json').toString())
+const comments = JSON.parse(fs.readFileSync('./datas/comments.json').toString())
 
 const typeDefs = `
     type Query{
@@ -117,4 +106,6 @@ const resolvers = {
 
 const server = new GraphQLServer({ typeDefs, resolvers })
 
-server.start(() => console.log('http://localhost:4000'))
+server.start(() =>
+    console.log('Grapgql server working at http://localhost:4000')
+)

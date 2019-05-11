@@ -6,10 +6,12 @@
         "url": "https://rayhan.info"
     },
     "scripts": {
-        "start": "node index",
-        "dev": "nodemon"
+        "start": "babel-node index",
+        "dev": "nodemon index --exec babel-node"
     },
     "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
         "graphql-yoga": "^1.17.4"
     },
     "devDependencies": {
